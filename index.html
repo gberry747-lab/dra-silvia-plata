@@ -639,9 +639,8 @@
     document.getElementById("header").classList.toggle("scrolled", window.scrollY > 10);
   });
 
-  // init — auto-pick Spanish on Spanish-language devices (her patients), English otherwise (your review)
-  var _nav = (navigator.language || "en").toLowerCase();
-  setLang(_nav.indexOf("es") === 0 ? "es" : "en");
+  // init — default to Spanish (patient-facing language); the EN toggle is always available
+  setLang("es");
 </script>
 </body>
 </html>
