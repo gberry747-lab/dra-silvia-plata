@@ -698,15 +698,17 @@
   // init, default to Spanish (patient-facing language); the EN toggle is always available
   setLang("es");
 
-  // Always start at the top on refresh: disable the browser's scroll restore and
-  // drop any #section anchor left in the URL by the nav links.
+  // Always start at the top on refresh: disable the browser's scroll restore, drop any
+  // #section anchor left in the URL, and out-wait Chrome's late anchor re-scroll at load.
   if ("scrollRestoration" in history) history.scrollRestoration = "manual";
   if (location.hash) history.replaceState(null, "", location.pathname + location.search);
-  window.addEventListener("pageshow", function(){
+  function _toTop(){
     document.documentElement.style.scrollBehavior = "auto";
     window.scrollTo(0, 0);
     setTimeout(function(){ document.documentElement.style.scrollBehavior = ""; }, 60);
-  });
+  }
+  _toTop();
+  window.addEventListener("load", function(){ _toTop(); setTimeout(_toTop, 250); setTimeout(_toTop, 600); });
 
   // Instagram safety net: if the embeds have not actually rendered a few seconds in
   // (script or iframes blocked by an extension), show the fallback cards instead.
