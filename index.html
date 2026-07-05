@@ -241,9 +241,8 @@
 
   /* Instagram */
   .ig{text-align:center}
-  .ig .igrow{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px}
-  .ig .tile{width:150px;height:150px;border-radius:18px;background:linear-gradient(160deg,var(--teal-100),var(--coral-soft));display:grid;place-items:center;color:var(--teal-900);opacity:.85;box-shadow:var(--shadow-sm)}
-  .ig .tile svg{width:34px;height:34px;opacity:.6}
+  .ig .igrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:30px;max-width:1140px;margin-left:auto;margin-right:auto}
+  .ig .igrow blockquote.instagram-media{margin:0 auto !important;min-width:0 !important;width:100% !important;max-width:540px !important;border-radius:18px !important;box-shadow:var(--shadow-sm) !important}
 
   /* Footer */
   footer{background:var(--teal-900);color:#fff;padding:56px 0 30px}
@@ -588,10 +587,10 @@
     <h2 style="font-size:clamp(1.7rem,3vw,2.3rem);margin:.3em 0 .3em" data-en="Women's health tips on Instagram" data-es="Consejos de salud femenina en Instagram">Women's health tips on Instagram</h2>
     <p class="lead center" data-en="Education on contraception, reproductive health and wellbeing, every week." data-es="Educación sobre anticoncepción, salud reproductiva y bienestar, cada semana.">Education on contraception, reproductive health and wellbeing, every week.</p>
     <div class="igrow">
-      <a class="tile" href="https://instagram.com/ginecologasilviaplata" target="_blank" rel="noopener" aria-label="Instagram @ginecologasilviaplata"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-      <a class="tile" href="https://instagram.com/ginecologasilviaplata" target="_blank" rel="noopener" aria-label="Instagram @ginecologasilviaplata"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-      <a class="tile" href="https://instagram.com/ginecologasilviaplata" target="_blank" rel="noopener" aria-label="Instagram @ginecologasilviaplata"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
-      <a class="tile" href="https://instagram.com/ginecologasilviaplata" target="_blank" rel="noopener" aria-label="Instagram @ginecologasilviaplata"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/ginecologasilviaplata/p/Cha0dersS5L/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/maima.atulado/reel/DZXcYopxgqK/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/maima.atulado/reel/DY0es2ixAyf/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/maima.atulado/reel/DYViw8yxaH_/" data-instgrm-version="14"></blockquote>
     </div>
     <div style="margin-top:28px">
       <a class="btn btn-teal" href="https://instagram.com/ginecologasilviaplata" target="_blank" rel="noopener" data-en="Follow @ginecologasilviaplata" data-es="Seguir @ginecologasilviaplata">Follow @ginecologasilviaplata</a>
@@ -692,6 +691,9 @@
 
   // init, default to Spanish (patient-facing language); the EN toggle is always available
   setLang("es");
+</script>
+<!-- Official Instagram embed script (renders the .instagram-media blockquotes above) -->
+<script async src="https://www.instagram.com/embed.js">
 </script>
 </body>
 </html>
