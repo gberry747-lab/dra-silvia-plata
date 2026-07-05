@@ -682,7 +682,22 @@
       ? "Dra. Silvia Plata, Ginecóloga y Obstetra en Bucaramanga | Atención en inglés y español"
       : "Dra. Silvia Plata, English-Speaking Gynecologist & Obstetrician | Bucaramanga, Colombia";
     refreshWa(lang);
+    fitFootPill();
   }
+
+  // ---- Footer pill: end exactly where the tagline's first line ends ----
+  function fitFootPill(){
+    var p = document.querySelector(".foot p");
+    var pill = document.querySelector(".foot-logo");
+    if(!p || !pill) return;
+    var r = document.createRange();
+    r.selectNodeContents(p);
+    var rects = r.getClientRects();
+    if(rects.length) pill.style.width = Math.round(rects[0].width) + "px";
+  }
+  window.addEventListener("load", fitFootPill);
+  window.addEventListener("resize", fitFootPill);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitFootPill);
 
   // ---- Mobile menu ----
   function toggleMenu(open){
