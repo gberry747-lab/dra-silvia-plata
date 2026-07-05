@@ -698,6 +698,16 @@
   // init, default to Spanish (patient-facing language); the EN toggle is always available
   setLang("es");
 
+  // Always start at the top on refresh: disable the browser's scroll restore and
+  // drop any #section anchor left in the URL by the nav links.
+  if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+  if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+  window.addEventListener("pageshow", function(){
+    document.documentElement.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    setTimeout(function(){ document.documentElement.style.scrollBehavior = ""; }, 60);
+  });
+
   // Instagram safety net: if the embeds have not actually rendered a few seconds in
   // (script or iframes blocked by an extension), show the fallback cards instead.
   setTimeout(function(){
